@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+    
+    <body>
+         <nav>
+          <div>
+            <div>
+              <a href="#">TGIF</a>
+            </div>
+            <ul >
+              <li><a href="#">Home</a></li>
+              <li >
+                <a href="#">Congress 113</a>
+                <ul >
+                  <li><a href="#">Senate</a></li>
+                  <li><a href="#">House</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>        
+            <!--Table container-->
+        <div>     
+            <h2>Congressmen</h2>
+            <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+            <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+       	    <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Party Affiliation</th>
+                        <th>State</th>
+                        <th>Years in Office</th>
+                        <th>Percentage of Votes</th>
+                    </tr>
+                </thead>
+                <tbody id="app">
+                    <tr v-for="member in members" :key="member.id">
+                        <td><a :href="member.url">{{ member.first_name }} {{ member.middle_name }} {{ member.last_name }}</a></td>
+                        <td>{{ member.party }}</td>
+                        <td>{{ member.state }}</td>
+                        <td>{{ member.seniority }}</td>
+                        <td>{{ member.votes_with_party_pct }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="./js/main.js"></script>
+        <script>option = "H";</script>
+    </body>
+</html>
